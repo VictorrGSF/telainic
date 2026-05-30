@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">telainic</string>
+    <string name="preencha_os_campos_abaixo_para_realizar_o_cadastro">Preencha os campos abaixo para realizar o cadastro</string>
+    <string name="nome">NOME</string>
+    <string name="bem_vindos">Bem Vindos</string>
+    <string name="cadastrar">CADASTRAR</string>
+    <string name="idaxde">IDAxDE</string>
+    <string name="digite_sua_idade">Digite sua idade</string>
+    <string name="digite_seu_nome">Digite_seu_nome</string>
+    <string name="digite_seu_email" />
+</resources>
