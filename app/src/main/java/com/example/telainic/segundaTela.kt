@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import android.content.Intent
 
 
 
@@ -39,7 +40,9 @@ class segundaTela : AppCompatActivity() {
                )
                .setPositiveButton("OK") { _, _ ->
 
-                   finish()}
+                   val intent = Intent (this,telaLogada::class.java)
+                   startActivity(intent)
+               }
                .show()
 
 

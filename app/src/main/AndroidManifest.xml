@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Telainic">
         <activity
+            android:name=".telaLogada"
+            android:exported="false" />
+        <activity
             android:name=".segundaTela"
             android:exported="false" />
         <activity
