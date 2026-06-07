@@ -41,6 +41,7 @@ class segundaTela : AppCompatActivity() {
                .setPositiveButton("OK") { _, _ ->
 
                    val intent = Intent (this,telaLogada::class.java)
+                   intent.putExtra("NOME_USUARIO", nome)
                    startActivity(intent)
                }
                .show()

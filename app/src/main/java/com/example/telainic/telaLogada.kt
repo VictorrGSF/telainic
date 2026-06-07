@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import android.widget.ImageButton
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
+import android.widget.TextView
 
 class telaLogada : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -17,6 +18,9 @@ class telaLogada : AppCompatActivity() {
         setContentView(R.layout.activity_tela_logada)
 
         val btnAgendar = findViewById<MaterialButton>(R.id.btnAgendar)
+        val saudacao = findViewById<TextView>(R.id.Saudacao)
+        val nomeUsuario = intent.getStringExtra("NOME_USUARIO") ?: "Usuário"
+        saudacao.text = "Olá, $nomeUsuario"
 
         btnAgendar.setOnClickListener {
             Toast.makeText(
@@ -26,7 +30,7 @@ class telaLogada : AppCompatActivity() {
             ).show()
         }
 
-        val btnBack = findViewById<ImageButton>(R.id.btnBack)
+        val btnBack = findViewById<MaterialButton>(R.id.btnVoltar)
 
         btnBack.setOnClickListener {
             finish()
