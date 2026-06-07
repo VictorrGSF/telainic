@@ -1,398 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0057B8"
-    android:fillViewport="true">
+    tools:context=".telaLogada">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/AgendarConsulta"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingStart="24dp"
-        android:paddingTop="32dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="32dp">
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:text="Agendar Consulta"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textColorLink="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Botão Voltar -->
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Voltar"
-            android:src="@drawable/voltar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="#FFFFFF" />
+    <TextView
+        android:id="@+id/SubTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="Preencha as informações abaixo"
+        android:textColor="#E3F2FD"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AgendarConsulta" />
 
-        <!-- Título -->
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/DadosDoUsuario"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="#0057B8"
+        app:cardBackgroundColor="#02647A"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SubTitulo" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:text="Agendar Consulta"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/btnBack"
-            app:layout_constraintBottom_toBottomOf="@id/btnBack" />
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-        <!-- Subtítulo -->
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/ic_usuario"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/icone_usuario" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:gravity="center"
-            android:text="Preencha as informações abaixo"
-            android:textColor="#E3F2FD"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
 
-        <!-- Card de Dados do Usuário -->
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardUser"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#1261A3"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/Saudacao"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp">
+                android:text="Olá , [NOME_USUÀRIO]"
+                android:textColor="#4CAF50"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-                <!-- Ícone de Usuário -->
-                <ImageView
-                    android:id="@+id/ivUserIcon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icone_usuario"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:tint="#FFFFFF" />
-
-                <!-- Saudação -->
-                <TextView
-                    android:id="@+id/tvGreeting"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    app:layout_constraintStart_toEndOf="@id/ivUserIcon"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Olá, João Silva" />
-
-                <!-- Subtexto do Card -->
-                <TextView
-                    android:id="@+id/tvUserSubtext"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Seus dados foram carregados com sucesso."
-                    android:textColor="#E3F2FD"
-                    android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ivUserIcon"
-                    app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Campo 1: Especialidade da consulta -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEspecialidade"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:hint="Especialidade da consulta *"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardUser">
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/SubSaudacao"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Selecione a especialidade"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="none" />
+                android:text="Seus dados foram carregados com sucesso"
+                android:textColor="#E3F2FD"
+                android:textSize="13sp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-        <!-- Campo 2: Unidade de saúde -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilUnidade"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Unidade de saúde *"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilEspecialidade">
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Selecione a unidade de saúde"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="none" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo 3: Data da consulta -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilData"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Data da consulta *"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:endIconMode="custom"
-
-            app:endIconTint="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilUnidade">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Selecione a data"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="none"
-                android:focusable="false"
-                android:clickable="true" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo 4: Período -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilPeriodo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Período *"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilData">
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Selecione o período"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="none" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo 5: Motivo da consulta -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilMotivo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Motivo da consulta"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:counterEnabled="true"
-            app:counterMaxLength="200"
-            app:counterTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilPeriodo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:hint="Descreva brevemente o motivo da consulta"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:gravity="top|start"
-                android:inputType="textMultiLine|textCapSentences"
-                android:maxLength="200"
-                android:maxLines="5"
-                android:scrollbars="vertical" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo 6: Telefone para contato -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTelefone"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="Telefone para contato"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilMotivo">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="(xx) xxxxx-xxxx"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="phone"
-                android:maxLength="15" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo 7: E-mail -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:hint="E-mail (opcional)"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxStrokeColor="#FFFFFF"
-            app:boxStrokeWidth="1.5dp"
-            app:boxBackgroundColor="@android:color/transparent"
-            app:hintTextColor="#E3F2FD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilTelefone">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="seuemail@exemplo.com"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#E3F2FD"
-                android:background="@android:color/transparent"
-                android:inputType="textEmailAddress" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Botão Principal: Agendar Consulta -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAgendar"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:text="AGENDAR CONSULTA"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:backgroundTint="#4CAF50"
-            app:cornerRadius="12dp"
-            app:icon="@drawable/calendario"
-            app:iconTint="#FFFFFF"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:elevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilEmail" />
-
-        <!-- Botão Secundário: Voltar -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnVoltar"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:text="VOLTAR"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:backgroundTint="@android:color/transparent"
-            app:cornerRadius="12dp"
-            app:strokeColor="#FFFFFF"
-            app:strokeWidth="1.5dp"
-            app:iconTint="#FFFFFF"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnAgendar" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
